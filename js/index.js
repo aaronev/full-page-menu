@@ -8,8 +8,27 @@ Menu.prototype.renderMenuButton = function() {
     )
 }
 
+Menu.prototype.renderMenuItems = function() {
+  for (i = 0; i < this.items.length; i++) {
+    $('#nav').append('<li class="hidden"><a>'+this.items[i]+'</a></li>')
+  }    
+}
+
+Menu.prototype.clickMenu = function() {
+  
+}
+
+
+
+
+
+
+
+
 Menu.prototype.initialize = function() {
   this.renderMenuButton()
+  this.renderMenuItems()
 }
+
 
 new Menu().initialize()
