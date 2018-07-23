@@ -4,30 +4,27 @@ function Menu() {
 
 Menu.prototype.renderMenuButton = function() {
   $('body').append(
-    '<nav id="nav"><button>Menu</button></nav>'
+    '<nav id="nav"><button id="menu">Menu</button><ul id="list"></ul></nav>'
     )
 }
 
 Menu.prototype.renderMenuItems = function() {
   for (i = 0; i < this.items.length; i++) {
-    $('#nav').append('<li class="hidden"><a>'+this.items[i]+'</a></li>')
+    $('#list').append('<li><a href="">'+this.items[i]+'</a></li>')
   }    
 }
 
 Menu.prototype.clickMenu = function() {
-  
+  document.getElementById('menu').addEventListener('click', function(){
+    $('li').show()
+    $('#list').addClass('animated slideInLeft')
+  })
 }
-
-
-
-
-
-
-
 
 Menu.prototype.initialize = function() {
   this.renderMenuButton()
   this.renderMenuItems()
+  this.clickMenu()
 }
 
 
